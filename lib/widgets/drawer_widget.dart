@@ -1,6 +1,7 @@
 import 'package:businessmanagementsoftware/screens/add_product.dart';
 import 'package:businessmanagementsoftware/screens/add_sale.dart';
 import 'package:businessmanagementsoftware/screens/product_details.dart';
+import 'package:businessmanagementsoftware/screens/sale_history.dart';
 import 'package:flutter/material.dart';
 
 Widget drawerWidget(BuildContext context) => Drawer(
@@ -70,6 +71,22 @@ Widget drawerWidget(BuildContext context) => Drawer(
               Navigator.pushAndRemoveUntil(
                   context,
                   MaterialPageRoute(builder: (context) => AddSale()),
+                      (route) => false);
+              // Update the state of the app
+              // ...
+              // Then close the drawer
+              // Navigator.pop(context);
+            },
+          ),
+          ListTile(
+            title: Text(
+              'Sale History',
+              style: TextStyle(color: Colors.white),
+            ),
+            onTap: () {
+              Navigator.pushAndRemoveUntil(
+                  context,
+                  MaterialPageRoute(builder: (context) => SaleHistory()),
                       (route) => false);
               // Update the state of the app
               // ...

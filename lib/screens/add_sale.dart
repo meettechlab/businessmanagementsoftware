@@ -438,19 +438,18 @@ class _AddSaleState extends State<AddSale> {
                                               IconButton(
                                                   icon: new Icon(Icons.delete),
                                                   onPressed: () {
-                                                    // FirebaseFirestore.instance
-                                                    //     .collection('products')
-                                                    //     .get()
-                                                    //     .then((QuerySnapshot querySnapshot) {
-                                                    //   for (var doc in querySnapshot.docs) {
-                                                    //     if(doc["docID"] == storedocs[i]["docID"]){
-                                                    //       setState(() {
-                                                    //         doc.reference.delete();
-                                                    //         Navigator.pop(context);
-                                                    //       });
-                                                    //     }
-                                                    //   }
-                                                    // });
+                                                    setState((){
+                                                      for(Product j in _storeDocs){
+                                                        if(j.docID ==  _storeDocs[i].docID){
+                                                          _storeDocs.remove(j);
+                                                          Navigator.of(context).pop();
+                                                        }
+                                                      }
+                                                      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                                                          backgroundColor: Colors.green,
+                                                          content: Text(
+                                                              "Product removed from cart!!")));
+                                                    });
                                                   })
                                             ],
                                           )
@@ -472,7 +471,6 @@ class _AddSaleState extends State<AddSale> {
           )
       ),
     );
-
 
     final cartButton = Container(
         padding: EdgeInsets.fromLTRB(20, 5, 20, 5),
