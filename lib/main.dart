@@ -1,5 +1,7 @@
 import 'package:businessmanagementsoftware/screens/add_product.dart';
 import 'package:businessmanagementsoftware/screens/add_sale.dart';
+import 'package:businessmanagementsoftware/screens/login_screen.dart';
+import 'package:businessmanagementsoftware/screens/manage.dart';
 import 'package:businessmanagementsoftware/screens/product_details.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -41,7 +43,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.brown,
       ),
-      home: AddSale(),
+      home: LoginScreen(),
     );
   }
 }

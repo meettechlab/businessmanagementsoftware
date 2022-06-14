@@ -1,7 +1,10 @@
 import 'package:businessmanagementsoftware/screens/add_product.dart';
 import 'package:businessmanagementsoftware/screens/add_sale.dart';
+import 'package:businessmanagementsoftware/screens/login_screen.dart';
+import 'package:businessmanagementsoftware/screens/manage.dart';
 import 'package:businessmanagementsoftware/screens/product_details.dart';
 import 'package:businessmanagementsoftware/screens/sale_history.dart';
+import 'package:businessmanagementsoftware/screens/transaction_history.dart';
 import 'package:flutter/material.dart';
 
 Widget drawerWidget(BuildContext context) => Drawer(
@@ -94,6 +97,58 @@ Widget drawerWidget(BuildContext context) => Drawer(
               // Navigator.pop(context);
             },
           ),
+
+          ListTile(
+            title: Text(
+              'Cash Management',
+              style: TextStyle(color: Colors.white),
+            ),
+            onTap: () {
+              Navigator.pushAndRemoveUntil(
+                  context,
+                  MaterialPageRoute(builder: (context) => Manage()),
+                      (route) => false);
+              // Update the state of the app
+              // ...
+              // Then close the drawer
+              // Navigator.pop(context);
+            },
+          ),
+
+          ListTile(
+            title: Text(
+              'Transaction History',
+              style: TextStyle(color: Colors.white),
+            ),
+            onTap: () {
+              Navigator.pushAndRemoveUntil(
+                  context,
+                  MaterialPageRoute(builder: (context) => TransactionHistory()),
+                      (route) => false);
+              // Update the state of the app
+              // ...
+              // Then close the drawer
+              // Navigator.pop(context);
+            },
+          ),
+
+          ListTile(
+            title: Text(
+              'Log out',
+              style: TextStyle(color: Colors.white),
+            ),
+            onTap: () {
+              Navigator.pushAndRemoveUntil(
+                  context,
+                  MaterialPageRoute(builder: (context) => LoginScreen()),
+                      (route) => false);
+              // Update the state of the app
+              // ...
+              // Then close the drawer
+              // Navigator.pop(context);
+            },
+          ),
+
         ],
       ),
     );
