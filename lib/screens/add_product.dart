@@ -29,6 +29,8 @@ class _AddProductState extends State<AddProduct> {
   bool _newCategory = false;
   bool _newProduct = false;
   String _selectedDoc = "";
+  List<int> _indexList = [];
+
 
   @override
   void initState() {
@@ -42,15 +44,25 @@ class _AddProductState extends State<AddProduct> {
         .get()
         .then((QuerySnapshot querySnapshot) {
       for (var doc in querySnapshot.docs) {
-
-          if (doc["productID"].toString().split(":").last == "1"&& doc["productID"].toString().split(":").first != "none") {
+          if (doc["category"] != "none") {
             setState(() {
              _categoryList.add(doc["category"]);
             });
           }
-          setState(() {
-            _productList.add(doc["name"]);
-          });
+            setState(() {
+              _productList.add(doc["name"]);
+            });
+      }
+    }).whenComplete(() {
+      for(int i=1; i < _categoryList.length;i++){
+          if(_categoryList[i] ==_categoryList[i-1]){
+              _indexList.add(i);
+        }
+      }
+      for(int j in _indexList.reversed){
+        setState((){
+          _categoryList.removeAt(j);
+        });
       }
     });
   }
@@ -420,7 +432,7 @@ class _AddProductState extends State<AddProduct> {
     int _productID = 1;
     bool _unique = true;
     if (_formKey.currentState!.validate() &&
-        _chosenCategory != null) {
+        _chosenCategory != null && _chosenProduct != null) {
 
         FirebaseFirestore.instance
             .collection('products')

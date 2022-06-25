@@ -297,7 +297,7 @@ class _ManageState extends State<Manage> {
 
 
   void AddData() async {
-    if (_formKey.currentState!.validate()) {
+    if (_formKey.currentState!.validate() && _chosenCash != null) {
       var ref = FirebaseFirestore.instance.collection("cash")
           .doc();
       Cash cash = Cash();
