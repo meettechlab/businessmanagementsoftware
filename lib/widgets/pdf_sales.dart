@@ -110,13 +110,13 @@ class PdfSales {
 
         buildFooterText(
             title: '',
-            value: 'M/S Priya Enterprise coal & stone importer & distributor', isBold: true),
+            value: 'Camera Square', isBold: true),
         SizedBox(height: 1 * PdfPageFormat.mm),
-        buildFooterText(title: 'Contact :', value: '+8801711-362096 , +8801712-403015 , +8801716-882817', isBold: false),
+        buildFooterText(title: 'Contact :', value: '+8801784646554', isBold: false),
         SizedBox(height: 1 * PdfPageFormat.mm),
-        buildFooterText(title: 'Address :', value: 'Laldighirpar, Sylhet', isBold: false),
-        SizedBox(height: 1 * PdfPageFormat.mm),
-        buildFooterText(title: 'Email :', value: 'sawonseu@gmail.com', isBold: false),
+        buildFooterText(title: 'Address :', value: '!st floor, Element Shopping Mall, Sylhet', isBold: false),
+        // SizedBox(height: 1 * PdfPageFormat.mm),
+        // buildFooterText(title: 'Email :', value: 'sawonseu@gmail.com', isBold: false),
         SizedBox(height: 1 * PdfPageFormat.mm),
         buildFooterText(title: 'Developed By :', value: 'MeetTech Lab ', isBold: false),
         buildFooterText(title: 'Contact :', value: '+8801755-460159 ', isBold: false),

@@ -25,7 +25,7 @@ Widget drawerWidget(BuildContext context) => Drawer(
             ),
             child: Center(
               child: Text(
-                'Mihad Mobile store',
+                'Camera Square',
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
                     color: Colors.white,

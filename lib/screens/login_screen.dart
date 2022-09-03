@@ -200,7 +200,7 @@ class _LoginScreenState extends State<LoginScreen> {
                          ),
                          child: Center(
                            child: Text(
-                             'Mihad Mobile Store',
+                             'Camera Square',
                              style: TextStyle(
                                  fontWeight: FontWeight.bold,
                                  color: Colors.white,
@@ -238,7 +238,7 @@ class _LoginScreenState extends State<LoginScreen> {
                              height: MediaQuery.of(context).size.height / 7,
                            ),
                            Text(
-                             'MEET TECH LAB',
+                             'MEETTECH LAB',
                              style: TextStyle(
                                  fontWeight: FontWeight.bold,
                                  color: Colors.pinkAccent),
@@ -250,7 +250,7 @@ class _LoginScreenState extends State<LoginScreen> {
                              mainAxisAlignment: MainAxisAlignment.center,
                              children: [
                                Text(
-                                 'Contact :',
+                                 'Contact : ',
                                  style: TextStyle(
                                      fontWeight: FontWeight.bold,
                                      color: Colors.blueAccent),
